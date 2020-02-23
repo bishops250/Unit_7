@@ -13,10 +13,10 @@ public class ArrayListMethods {
         arrayListVal.add(12);
         arrayListVal.add(-1);
         System.out.println(arrayListVal.toString());
-        arrayListVal.add(10,2);
+        arrayListVal.add(2,10);
         arrayListVal.set(1,9);
         System.out.println(arrayListVal.toString());
-        arrayListVal.remove(3);
+        arrayListVal.remove(4);
         System.out.println(arrayListVal.toString());
         return arrayListVal;
 

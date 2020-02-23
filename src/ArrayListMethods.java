@@ -21,24 +21,49 @@ public class ArrayListMethods {
         return arrayListVal;
 
     }
+
+
     public static ArrayList<Double> firstAndLast() {
 
         ArrayList<Double> arrayListVal= new ArrayList<Double>();
+        double users_number=1; //starts the loop then is immediately replaced.
 
-        while ( != 0) {
+        while ( users_number!= 0) {
             System.out.println("Please enter one decimal number(Enter the num 0 to quit): ");
-            double users_number = scan.nextDouble();
+            users_number = scan.nextDouble();
             arrayListVal.add(users_number);
-
         }
+        arrayListVal.add((double) arrayListVal.size());
+        arrayListVal.add(arrayListVal.get(0));
+        arrayListVal.add(arrayListVal.get(arrayListVal.size()-1));
+
+        return arrayListVal;
     }
 
     public static ArrayList<Double> getNumbers() {
+        ArrayList<Double> arrayListVal= new ArrayList<Double>();
+        for(int i=0; i<3;i++) {
+            System.out.println("Please enter one decimal number(Enter the num 0 to quit): ");
+            double users_number = scan.nextDouble();
+            arrayListVal.add(users_number);
+        }
+        return arrangeList(arrayListVal);
 
     }
 
     public static ArrayList<Double> arrangeList(ArrayList<Double> numbers) {
+        ArrayList<Double> arrangedArrayList= numbers;
+        double temp;
 
+        for(int i=0; i<arrangedArrayList.size()-1;++i) {
+            temp=arrangedArrayList.get(i);
+            if(arrangedArrayList.get(i)<arrangedArrayList.get(i+1)) {
+                arrangedArrayList.set(i,arrangedArrayList.get(i+1));
+                arrangedArrayList.set(i+1,temp);
+            }
+
+        }
+        return arrangedArrayList;
     }
 
 

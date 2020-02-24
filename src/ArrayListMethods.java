@@ -25,7 +25,8 @@ public class ArrayListMethods {
 
     public static ArrayList<Double> firstAndLast() {
 
-        ArrayList<Double> arrayListVal= new ArrayList<Double>();
+        ArrayList<Double> arrayListVal= new ArrayList<>();
+        ArrayList<Double> arrayListNewArray= new ArrayList<>();
         double users_number=1; //starts the loop then is immediately replaced.
 
         while ( users_number!= 0) {
@@ -33,7 +34,7 @@ public class ArrayListMethods {
             users_number = scan.nextDouble();
             arrayListVal.add(users_number);
         }
-        arrayListVal.add((double) arrayListVal.size());
+        arrayListNewArray.add((double) arrayListVal.size());
         arrayListVal.add(arrayListVal.get(0));
         arrayListVal.add(arrayListVal.get(arrayListVal.size()-1));
 

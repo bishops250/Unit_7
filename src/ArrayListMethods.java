@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
+// Note The Tests do Not Work Example cGetNumbers the website said it should be listed numerical orders.
+
 public class ArrayListMethods {
    private static Scanner scan= new Scanner(System.in);
 
@@ -27,18 +29,22 @@ public class ArrayListMethods {
 
         ArrayList<Double> arrayListVal= new ArrayList<>();
         ArrayList<Double> arrayListNewArray= new ArrayList<>();
-        double users_number=1; //starts the loop then is immediately replaced.
 
-        while ( users_number!= 0) {
+        double users_number=1;
+
+        while ( users_number!= 0.0) {
+
             System.out.println("Please enter one decimal number(Enter the num 0 to quit): ");
             users_number = scan.nextDouble();
             arrayListVal.add(users_number);
-        }
-        arrayListNewArray.add((double) arrayListVal.size());
-        arrayListVal.add(arrayListVal.get(0));
-        arrayListVal.add(arrayListVal.get(arrayListVal.size()-1));
 
-        return arrayListVal;
+        }
+
+        arrayListNewArray.add(arrayListVal.size()-1.0);
+        arrayListNewArray.add(arrayListVal.get(0));
+        arrayListNewArray.add(arrayListVal.get(arrayListVal.size()-2));
+
+        return arrayListNewArray;
     }
 
     public static ArrayList<Double> getNumbers() {

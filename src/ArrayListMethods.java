@@ -32,17 +32,20 @@ public class ArrayListMethods {
 
         double users_number=1;
 
-        while ( users_number!= 0.0) {
+        while (true) {
 
             System.out.println("Please enter one decimal number(Enter the num 0 to quit): ");
             users_number = scan.nextDouble();
+            if(users_number==0.0){
+                break;
+            }
             arrayListVal.add(users_number);
 
         }
 
-        arrayListNewArray.add(arrayListVal.size()-1.0);
+        arrayListNewArray.add((double) arrayListVal.size());
         arrayListNewArray.add(arrayListVal.get(0));
-        arrayListNewArray.add(arrayListVal.get(arrayListVal.size()-2));
+        arrayListNewArray.add(arrayListVal.get(arrayListVal.size()-1));
 
         return arrayListNewArray;
     }

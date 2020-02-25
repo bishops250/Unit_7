@@ -1,3 +1,4 @@
+/*
 import org.junit.Test;
 
 import java.io.IOException;
@@ -64,4 +65,4 @@ public class TraversingTest {
         assertEquals(17.22, ListOfRectangles.findAverage(r), 0.1);
 
     }
-}
+}*/

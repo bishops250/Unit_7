@@ -1,3 +1,4 @@
+/*
 import java.util.ArrayList;
 import java.io.File;
 import java.io.IOException;
@@ -24,3 +25,4 @@ public class ListOfRectangles {
         
     }
 }
+*/

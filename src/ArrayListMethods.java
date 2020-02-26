@@ -57,21 +57,24 @@ public class ArrayListMethods {
             double users_number = scan.nextDouble();
             arrayListVal.add(users_number);
         }
-        return arrangeList(arrayListVal);
+        return arrayListVal;
 
     }
 
     public static ArrayList<Double> arrangeList(ArrayList<Double> numbers) {
         ArrayList<Double> arrangedArrayList= numbers;
         double temp;
-
-        for(int i=0; i<arrangedArrayList.size()-1;++i) {
-            temp=arrangedArrayList.get(i);
-            if(arrangedArrayList.get(i)<arrangedArrayList.get(i+1)) {
-                arrangedArrayList.set(i,arrangedArrayList.get(i+1));
-                arrangedArrayList.set(i+1,temp);
+        double temp2;
+        double largestNum=Double.MIN_VALUE;
+        double smallestNum=Double.MAX_VALUE;
+        for(int i=0; i<arrangedArrayList.size()-1;i++) {
+            for (int i2 = 0; i2 < arrangedArrayList.size() - 1; i2++) {
+                temp = arrangedArrayList.get(i2);
+                if (arrangedArrayList.get(i2) < arrangedArrayList.get(i2 + 1)) {
+                    arrangedArrayList.set(i2, arrangedArrayList.get(i2 + 1));
+                    arrangedArrayList.set(i2, temp);
+                }
             }
-
         }
         return arrangedArrayList;
     }

@@ -69,8 +69,17 @@ public class ArrayListMethods {
         double smallestNum=Double.MAX_VALUE;
 
         for(int i=0; i<arrangedArrayList.size();i++) {
+            if(arrangedArrayList.get(i)>largestNum) {
+                largestNum = arrangedArrayList.get(i);
+            }
+            if(arrangedArrayList.get(i)<smallestNum) {
+                smallestNum=arrangedArrayList.get(i);
+            }
             
         }
+        arrangedArrayList.set(0,smallestNum);
+        arrangedArrayList.set(arrangedArrayList.size()-1,largestNum);
+
       /*  for(int i=0; i<arrangedArrayList.size();i++)
             if(arrangedArrayList.get(i)>largestNum) {
                 largestNum = arrangedArrayList.get(i);

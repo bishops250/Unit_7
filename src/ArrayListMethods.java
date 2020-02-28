@@ -62,26 +62,17 @@ public class ArrayListMethods {
     }
 
     public static ArrayList<Double> arrangeList(ArrayList<Double> numbers) {
-        ArrayList<Double> arrangedArrayList= numbers;
-
-        int smallestNum;
-        double SwapNum;
-
-        for(int i=0; i<arrangedArrayList.size()-1;i++) {
-
-            smallestNum= i;
-
-            for(int i2= i+1; i<arrangedArrayList.size()-1;i2++) {
-                if(arrangedArrayList.get(i2)<arrangedArrayList.get(smallestNum));
-                smallestNum=i2;
+        for (int i = 0; i < numbers.size(); i++)
+            if (numbers.get(0) > numbers.get(1) && numbers.get(0) > numbers.get(2)) {
+                double temp = numbers.get(2);
+                numbers.set(2, numbers.get(0));
             }
-            SwapNum= arrangedArrayList.get(i);
-            arrangedArrayList.set(i,arrangedArrayList.get(smallestNum));
-            arrangedArrayList.set(smallestNum,SwapNum);
-        }
+
+            if(numbers.get(0)>numbers.get(1) && numbers.get(0)<numbers.get(2))
 
 
-        return arrangedArrayList;
+
+        return numbers;
     }
 
 

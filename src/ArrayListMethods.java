@@ -63,31 +63,22 @@ public class ArrayListMethods {
 
     public static ArrayList<Double> arrangeList(ArrayList<Double> numbers) {
         ArrayList<Double> arrangedArrayList= numbers;
-        double temp;
-        double temp2;
-        double largestNum=Double.MIN_VALUE;
-        double smallestNum=Double.MAX_VALUE;
 
-        for(int i=0; i<arrangedArrayList.size();i++) {
-            
+        int smallestNum;
+        double SwapNum;
+
+        for(int i=0; i<arrangedArrayList.size()-1;i++) {
+
+            smallestNum= i;
+
+            for(int i2= i+1; i<arrangedArrayList.size()-1;i2++) {
+                if(arrangedArrayList.get(i2)<arrangedArrayList.get(smallestNum));
+                smallestNum=i2;
+            }
+            SwapNum= arrangedArrayList.get(i);
+            arrangedArrayList.set(i,arrangedArrayList.get(smallestNum));
+            arrangedArrayList.set(smallestNum,SwapNum);
         }
-      /*  for(int i=0; i<arrangedArrayList.size();i++)
-            if(arrangedArrayList.get(i)>largestNum) {
-                largestNum = arrangedArrayList.get(i);
-            }
-        else if(arrangedArrayList.get(i)<smallestNum) {
-            smallestNum=arrangedArrayList.get(i);
-            }
-
-        for(int i=0; i<arrangedArrayList.size();i++) {
-            for (int i2 = 0; i2 < arrangedArrayList.size() - 1; i2++) {
-                temp = arrangedArrayList.get(i2);
-                if (arrangedArrayList.get(i2) < arrangedArrayList.get(i2 + 1)) {
-                    arrangedArrayList.set(i2, arrangedArrayList.get(i2 + 1));
-                    arrangedArrayList.set(i2, temp);
-                }
-            }
-        }*/
 
 
         return arrangedArrayList;

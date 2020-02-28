@@ -66,6 +66,7 @@ public class ArrayListMethods {
             if (numbers.get(0) > numbers.get(1) && numbers.get(0) > numbers.get(2)) {
                 double temp = numbers.get(2);
                 numbers.set(2, numbers.get(0));
+                numbers.set(0,temp);
             }
 
             else if(numbers.get(0)>numbers.get(1) && numbers.get(0)<numbers.get(2)) {

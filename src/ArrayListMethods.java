@@ -4,7 +4,7 @@ import java.util.ArrayList;
 // Note The Tests do Not Work Example cGetNumbers the website said it should be listed numerical orders.
 
 public class ArrayListMethods {
-   private static Scanner scan= new Scanner(System.in);
+    private static Scanner scan= new Scanner(System.in);
 
     public static ArrayList<Integer> numberList() {
 
@@ -62,44 +62,28 @@ public class ArrayListMethods {
     }
 
     public static ArrayList<Double> arrangeList(ArrayList<Double> numbers) {
-        ArrayList<Double> arrangedArrayList= numbers;
-        double temp;
-        double temp2;
-        double largestNum=Double.MIN_VALUE;
-        double smallestNum=Double.MAX_VALUE;
-
-        for(int i=0; i<arrangedArrayList.size();i++) {
-            if(arrangedArrayList.get(i)>largestNum) {
-                largestNum = arrangedArrayList.get(i);
-            }
-            if(arrangedArrayList.get(i)<smallestNum) {
-                smallestNum=arrangedArrayList.get(i);
-            }
-            
-        }
-        arrangedArrayList.set(0,smallestNum);
-        arrangedArrayList.set(arrangedArrayList.size()-1,largestNum);
-
-      /*  for(int i=0; i<arrangedArrayList.size();i++)
-            if(arrangedArrayList.get(i)>largestNum) {
-                largestNum = arrangedArrayList.get(i);
-            }
-        else if(arrangedArrayList.get(i)<smallestNum) {
-            smallestNum=arrangedArrayList.get(i);
+        for (int i = 0; i < numbers.size(); i++)
+            if (numbers.get(0) > numbers.get(1) && numbers.get(0) > numbers.get(2)) {
+                double temp = numbers.get(2);
+                numbers.set(2, numbers.get(0));
+                numbers.set(0,temp);
             }
 
-        for(int i=0; i<arrangedArrayList.size();i++) {
-            for (int i2 = 0; i2 < arrangedArrayList.size() - 1; i2++) {
-                temp = arrangedArrayList.get(i2);
-                if (arrangedArrayList.get(i2) < arrangedArrayList.get(i2 + 1)) {
-                    arrangedArrayList.set(i2, arrangedArrayList.get(i2 + 1));
-                    arrangedArrayList.set(i2, temp);
-                }
+            else if(numbers.get(0)>numbers.get(1) && numbers.get(0)<numbers.get(2)) {
+                double temp= numbers.get(1);
+                numbers.set(1,numbers.get(0));
+                numbers.set(0,temp);
             }
-        }*/
+            else if(numbers.get(0)<numbers.get(1) && numbers.get(0)>numbers.get(2)) {
+                double temp=numbers.get(2);
+                numbers.set(0,temp);
+            }
 
 
-        return arrangedArrayList;
+
+
+
+        return numbers;
     }
 
 

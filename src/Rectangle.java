@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 
 public class Rectangle {
 
@@ -20,7 +20,7 @@ public class Rectangle {
     }
 
     public static double getRectangleArea() {
-      return (rectangleLength*2)+(rectangleWidth*2);
+      return (rectangleLength * rectangleWidth);
     }
 
 }

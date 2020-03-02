@@ -5,21 +5,20 @@ import java.util.Scanner;
 
 public class Traversing {
     static Scanner scan= new Scanner(System.in);
+
     public static ArrayList<String> getStates() {
 
         ArrayList<String>userStates= new ArrayList<>();
-
+         while(true){
         System.out.println("Enter the name of a state or \"Stop\" to quit: ");
         String userInput= scan.next();
-        while (!userInput.equals("Stop")) {
-            System.out.println("Next state or \"Stop\": ");
-            userInput= scan.next();
             if(userInput.equals("Stop")) {
                 break;
             }
             userStates.add(userInput);
         }
 return userStates;
+
     }
     public static String createList(ArrayList<String> states) {
 
@@ -27,33 +26,43 @@ return userStates;
 
         String stringOfStates="";
 
-        for(int i=0;i<stateArrayList.size()-1;i++) {
-            stringOfStates+=stateArrayList.get(i)+" -> ";
+        for(int i=0;i<stateArrayList.size();i++) {
+            if(i==stateArrayList.size()-1) {
+                stringOfStates+=stateArrayList.get(i);
+            }
+            else {
+                stringOfStates+=stateArrayList.get(i)+" -> ";
+            }
         }
         return stringOfStates;
     }
 
     public static ArrayList<Integer> largestAndSmallest() throws IOException {
         int largestNum=Integer.MIN_VALUE;
+        int indexOfSmallestNum;
         int smallestNum=Integer.MAX_VALUE;
+        int indexOfLargestNum;
         ArrayList<Integer> arrayDataStorage=new ArrayList<>();
-        Scanner presetData= new Scanner(new File("src/data.txt"));
+        Scanner presetData= new Scanner(new File("src/numbers.txt"));
 
-        while (presetData.hasNext()) {
+        while (presetData.hasNextInt()) {
             arrayDataStorage.add(presetData.nextInt());
         }
         for(int i:arrayDataStorage) {
             if(i>smallestNum) {
                 smallestNum=i;
             }
-            else if(i<largestNum) {
+             if(i<largestNum) {
                 largestNum=i;
-
             }
 
         }
+
+        arrayDataStorage.add(0,smallestNum);
+        arrayDataStorage.add(arrayDataStorage.size(),largestNum);
+
         return arrayDataStorage;
     }
 
-
 }
+

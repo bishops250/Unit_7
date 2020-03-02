@@ -51,7 +51,7 @@ public class ArrayListMethods {
     }
 
     public static ArrayList<Double> getNumbers() {
-        ArrayList<Double> arrayListVal= new ArrayList<Double>();
+        ArrayList<Double> arrayListVal= new ArrayList();
         for(int i=0; i<3;i++) {
             System.out.println("Please enter one decimal number(Enter the num 0 to quit): ");
             double users_number = scan.nextDouble();

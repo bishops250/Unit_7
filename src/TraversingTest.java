@@ -61,7 +61,7 @@ public class TraversingTest {
         r.add(new Rectangle(2.3, 1.5));
         r.add(new Rectangle(5, 3.25));
 
-       /* assertEquals(17.22, ListOfRectangles.findAverage(r), 0.1);*/
+       assertEquals(17.22, ListOfRectangles.findAverage(r), 0.1);
 
     }
 }

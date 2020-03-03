@@ -8,7 +8,7 @@ public class ArrayListMethods {
 
     public static ArrayList<Integer> numberList() {
 
-        ArrayList<Integer> arrayListVal= new ArrayList<Integer>();
+        ArrayList<Integer> arrayListVal= new ArrayList();
         arrayListVal.add(0);
         arrayListVal.add(-5);
         arrayListVal.add(7);

@@ -2,24 +2,24 @@
 
 public class Rectangle {
 
-    private static double rectangleLength;
-    private static double rectangleWidth;
+    private  double rectangleLength;
+    private  double rectangleWidth;
 
   public Rectangle(double rectangleLength, double rectangleWidth) {
-      Rectangle.rectangleLength =rectangleLength;
-      Rectangle.rectangleWidth = rectangleWidth;
+      this.rectangleLength =rectangleLength;
+      this.rectangleWidth = rectangleWidth;
   }
 
 
-    public static double getRectangleLength() {
+    public double getRectangleLength() {
         return rectangleLength;
     }
 
-    public static double getRectangleWidth() {
+    public double getRectangleWidth() {
         return rectangleWidth;
     }
 
-    public static double getRectangleArea() {
+    public double getRectangleArea() {
       return (rectangleLength * rectangleWidth);
     }
 

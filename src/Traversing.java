@@ -38,18 +38,23 @@ return userStates;
     }
 
     public static ArrayList<Integer> largestAndSmallest() throws IOException {
-        Integer largestNum=Integer.MIN_VALUE;
-        int indexOfSmallestNum=0;
-        Integer smallestNum=Integer.MAX_VALUE;
-        int indexOfLargestNum=0;
 
         Scanner presetData= new Scanner(new File("src/numbers.txt"));
         ArrayList<Integer> arrayDataStorage=new ArrayList<>();
 
+
+
+
         while (presetData.hasNextInt()) {
             arrayDataStorage.add(presetData.nextInt());
         }
+        int largestNum=arrayDataStorage.get(0);
+        int indexOfSmallestNum=0;
+        int smallestNum=arrayDataStorage.get(0);
+        int indexOfLargestNum=0;
         for(int i=0; i<arrayDataStorage.size();i++) {
+
+
             if(arrayDataStorage.get(i)>smallestNum) {
                 smallestNum = arrayDataStorage.get(i);
                 indexOfSmallestNum=i;
@@ -62,10 +67,10 @@ return userStates;
         }
 
         arrayDataStorage.remove(indexOfSmallestNum);
-        arrayDataStorage.add(0,smallestNum);
+        arrayDataStorage.add(0,largestNum);
 
         arrayDataStorage.remove(indexOfLargestNum+1);
-        arrayDataStorage.add(arrayDataStorage.size(),largestNum);
+        arrayDataStorage.add(arrayDataStorage.size(),smallestNum);
 
 
         return arrayDataStorage;

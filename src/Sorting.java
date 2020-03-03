@@ -1,3 +1,4 @@
+/*
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,6 +34,9 @@ public class Sorting {
 
 
 
-    public static boolean isSorted(ArrayList<Integer> arr)
+    public static boolean isSorted(ArrayList<Integer> arr) {
+        return true;
+    }
 
 }
+*/

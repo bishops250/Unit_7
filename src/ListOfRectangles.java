@@ -11,7 +11,7 @@ public class ListOfRectangles {
     public static ArrayList<Rectangle> getRectangles() throws IOException{
         Scanner presetData= new Scanner(new File("src/rectangle.txt"));
 
-        ArrayList<Rectangle> listOfRectangleOjects= new ArrayList();
+        ArrayList<Rectangle> listOfRectangleOjects= new ArrayList<>();
 
         while (presetData.hasNextDouble()) {
             double rectangleLength= presetData.nextDouble();
@@ -24,7 +24,8 @@ public class ListOfRectangles {
     public static double findAverage(ArrayList<Rectangle> rectangles) {
         double average=0;
         for(Rectangle rectangleObject: rectangles) {
-            average += Rectangle.getRectangleArea();
+            System.out.println(rectangleObject.getRectangleLength()+ " "+ rectangleObject.getRectangleWidth());
+            average += rectangleObject.getRectangleArea();
         }
         average/=rectangles.size();
         return average;

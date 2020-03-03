@@ -32,12 +32,45 @@ public class Algorithms {
         return duplicateList;
     }
 
-    public static ArrayList<String> fileDuplicatesTwo() {
+    public static ArrayList<String> fileDuplicatesTwo() throws IOException {
 
+        Scanner presetData= new Scanner(new File("names.txt"));
+        ArrayList<String> namesList = new ArrayList<>();
+
+        while (presetData.hasNext()) {
+            namesList.add(presetData.next());
+        }
+        System.out.println(namesList);
+
+        for(int i=0; i<namesList.size();i++) {
+            String testingString= namesList.get(i);
+            for(int i2=i+1; i<namesList.size();i2++) {
+                if(testingString.equals(namesList.get(i2))) {
+                    namesList.remove(i2);
+                    i2--;
+                    i--;
+                }
+        }
     }
 
-    public static ArrayList<Integer> orderedList() {
+        return namesList;
+}
 
+
+    public static ArrayList<Integer> orderedList() throws IOException{
+        Scanner file1= new Scanner(new File("file1.txt"));
+        ArrayList<Integer> file1List= new ArrayList();
+        ArrayList<Integer> orderedList= new ArrayList();
+
+
+
+        while (file1.hasNextInt()) {
+            file1List.add(file1.nextInt());
+        }
+
+        for(int i= 0; i<file1List.size();i++) {
+            
+        }
     }
 
 

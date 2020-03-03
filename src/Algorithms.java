@@ -1,4 +1,3 @@
-/*
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -72,9 +71,9 @@ public class Algorithms {
         for(int i= 0; i<file1List.size();i++) {
             
         }
+        return file1List;
     }
 
 
 }
 
-*/

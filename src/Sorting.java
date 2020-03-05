@@ -6,17 +6,12 @@ import java.util.Scanner;
 
 public class Sorting {
     public static ArrayList<Integer> getUnsorted() throws IOException {
-        Scanner unsortedData = new Scanner(new File());
-        Scanner presetSortedData = new Scanner(new File("sortedData.txt"));
-        ArrayList<Integer> unsortedDataList = new ArrayList<>();
-        ArrayList<Integer> presetSortedDataList = new ArrayList<>();
+        Scanner presetData = new Scanner(new File("sortedData.txt"));
+        ArrayList<Integer> presetDataList = new ArrayList<>();
 
-        while (unsortedData.hasNextInt()) {
-            unsortedDataList.add(unsortedData.nextInt());
-        }
 
-        while (presetSortedData.hasNextInt()) {
-            presetSortedDataList.add(presetSortedData.nextInt());
+        while (presetData.hasNextInt()) {
+            presetDataList.add(presetSortedData.nextInt());
 
         }
         for(int i = 0; i<presetSortedDataList.size();i++){

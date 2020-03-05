@@ -63,18 +63,12 @@ public class Algorithms {
         Scanner file1= new Scanner(new File("file1.txt"));
         ArrayList<Integer> file1List= new ArrayList();
         ArrayList<Integer> orderedList= new ArrayList();
+        int indexOfNumReplace=0;
+        
 
+        while (file1.hasNext()) {
 
-
-        while (file1.hasNextInt()) {
-            file1List.add(file1.nextInt());
         }
-
-        for(int i= 0; i<file1List.size();i++) {
-            
-        }
-        return file1List;
-    }
 
 
 }

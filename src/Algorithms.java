@@ -1,4 +1,3 @@
-/*
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -66,17 +65,22 @@ public class Algorithms {
         int indexOfNumReplace=0;
         
 
-        while (file1.hasNext()) {
+        while (file1.hasNextInt()) {
             int currentNum= file1.nextInt();
-            createdOrderedList.add(currentNum);
+            if(createdOrderedList.size()==0) {
+                createdOrderedList.add(currentNum);
+            }
             for(int i=0;i<createdOrderedList.size();i++) {
-                (i)
+                if(createdOrderedList.get(i)>currentNum) {
+                    createdOrderedList.add(i,currentNum);
+
+                }
             }
         }
+        return createdOrderedList;
 
         }
 
 
 }
 
-*/

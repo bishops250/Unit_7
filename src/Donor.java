@@ -10,19 +10,19 @@ public class Donor {
         this("Joe",5);
     }
 
-    public String getDonorName() {
+    public String getName() {
       return donorName;
     }
 
-    public double getDonationAmount() {
+    public double getAmount() {
         return donationAmount;
     }
 
-    public void setDonationAmount(double donationAmount) {
+    public void setAmount(double donationAmount) {
         this.donationAmount = donationAmount;
     }
 
-    public void setDonorName(String donorName) {
+    public void setName(String donorName) {
         this.donorName = donorName;
     }
 

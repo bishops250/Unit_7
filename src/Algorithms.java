@@ -1,3 +1,4 @@
+/*
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -61,15 +62,21 @@ public class Algorithms {
 
     public static ArrayList<Integer> orderedList() throws IOException{
         Scanner file1= new Scanner(new File("file1.txt"));
-        ArrayList<Integer> file1List= new ArrayList();
-        ArrayList<Integer> orderedList= new ArrayList();
+        ArrayList<Integer> createdOrderedList= new ArrayList();
         int indexOfNumReplace=0;
         
 
         while (file1.hasNext()) {
+            int currentNum= file1.nextInt();
+            createdOrderedList.add(currentNum);
+            for(int i=0;i<createdOrderedList.size();i++) {
+                (i)
+            }
+        }
 
         }
 
 
 }
 
+*/

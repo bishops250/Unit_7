@@ -84,7 +84,7 @@ public class Algorithms {
                             break;
                         }
                         else if (testingNum<currentNum) {
-                            createdOrderedList.add(currentNum);
+                            createdOrderedList.add(i,currentNum);
                             break;
                         }
                     }

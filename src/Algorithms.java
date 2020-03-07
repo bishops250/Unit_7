@@ -62,24 +62,39 @@ public class Algorithms {
     public static ArrayList<Integer> orderedList() throws IOException{
         Scanner file1= new Scanner(new File("file1.txt"));
         ArrayList<Integer> createdOrderedList= new ArrayList();
-        int indexOfNumReplace=0;
         
 
         while (file1.hasNextInt()) {
-            int currentNum= file1.nextInt();
-            if(createdOrderedList.size()==0) {
-                createdOrderedList.add(currentNum);
-            }
-            for(int i=0;i<createdOrderedList.size();i++) {
-                if(createdOrderedList.get(i)>currentNum) {
-                    createdOrderedList.add(i,currentNum);
+
+
+
+                int currentNum = file1.nextInt();
+
+                if (createdOrderedList.size() == 0) {
+
+                    createdOrderedList.add(currentNum);
 
                 }
-            }
+                else {
+                    for (int i = 0; i < createdOrderedList.size(); i++) {
+
+                        int testingNum=createdOrderedList.get(i);
+                        if (testingNum > currentNum) {
+                            createdOrderedList.add(i, currentNum);
+                            break;
+                        }
+                        else if (testingNum<currentNum) {
+                            createdOrderedList.add(currentNum);
+                            break;
+                        }
+                    }
+
+                    }
         }
         return createdOrderedList;
 
         }
+
 
 
 }

@@ -1,4 +1,3 @@
-/*
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,29 +6,26 @@ import java.util.Scanner;
 public class Sorting {
     public static ArrayList<Integer> getUnsorted() throws IOException {
 
-        Scanner fileToBeCompared = new Scanner(new File(""));
+        Scanner fileToBeCompared = new Scanner(new File("sortedData.txt"));
 
         ArrayList<Integer> fileToBeComparedList = new ArrayList<>();
 
 
         while (fileToBeCompared.hasNextInt()) {
 
+            fileToBeComparedList.add(fileToBeCompared.nextInt());
         }
+        return fileToBeComparedList;
     }
 
-    public static boolean isSorted(ArrayList<Integer> arr) throws IOException {
+    public static boolean isSorted(ArrayList<Integer> arr) {
 
-        ArrayList<Integer> sortedFIleCompareList = new ArrayList<>();
-        Scanner sortedFileCompare = new Scanner(new File(""));
 
-        while (sortedFileCompare.hasNextInt()) {
-            sortedFIleCompareList.add(sortedFileCompare.nextInt());
-        }
 
-        for(int i=0; i<arr.size();i++) {
+        for(int i=0; i<arr.size()-1;i++) {
             int currentNum= arr.get(i) ;
-            int testingNum= sortedFIleCompareList.get(i);
-            if(currentNum!=testingNum) {
+            int testingNum= arr.get(i+1);
+            if(currentNum>testingNum) {
                 return false;
             }
 
@@ -37,4 +33,3 @@ public class Sorting {
         return true;
     }
 }
-*/

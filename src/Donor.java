@@ -27,6 +27,6 @@ public class Donor {
     }
 
     public String toString() {
-        return "The Donors name is: " + donorName + ".\nThis Donor donated: $" + donationAmount;
+        return "The Donors name is: " + donorName + ".\nThis Donor donated: $" + donationAmount + ".";
     }
 }

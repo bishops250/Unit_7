@@ -21,7 +21,7 @@ public class SelfAdjusting {
     public ArrayList<Integer> getQueryArrayList() {
         return queryArrayList;
     }
-    public static void adjustList(ArrayList<Integer> searchArrayList) {
+    public static ArrayList<Integer> adjustList(ArrayList<Integer> searchArrayList) {
 
         ArrayList<Integer> arrayListToBeSearched_Modified= new ArrayList<>();
         arrayListToBeSearched_Modified.add(2);
@@ -38,6 +38,9 @@ public class SelfAdjusting {
 
         for(int i= 0; i<searchArrayList.size();i++) {
             int currentNum= searchArrayList.get(i);
+            if(currentNum==0) {
+                break;
+            }
             int indexOfCurrentNum= i;
             for(int i2=0; i2<arrayListToBeSearched_Modified.size();i2++) {
                 int indexOfSearchNum=i2;
@@ -56,6 +59,8 @@ public class SelfAdjusting {
 
             }
         }
-
+        return arrayListToBeSearched_Modified;
     }
+
+
 }

@@ -77,16 +77,15 @@ public class Algorithms {
             for(int i = 0; i < createdOrderedList.size(); i++){
                 int testingNum=createdOrderedList.get(i);
 
-                if(i == createdOrderedList.size() - 1){
-                    createdOrderedList.add(numToBeAdded);
-                    break;
-                }
-
+                
                 if(numToBeAdded < testingNum) {
                     createdOrderedList.add(i, numToBeAdded);
                     break;
                 }
-
+                if(i == createdOrderedList.size() - 1){
+                    createdOrderedList.add(numToBeAdded);
+                    break;
+                }
 
             }
         }

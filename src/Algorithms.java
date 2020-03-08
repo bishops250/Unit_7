@@ -77,7 +77,7 @@ public class Algorithms {
             for(int i = 0; i < createdOrderedList.size(); i++){
                 int testingNum=createdOrderedList.get(i);
 
-                
+
                 if(numToBeAdded < testingNum) {
                     createdOrderedList.add(i, numToBeAdded);
                     break;

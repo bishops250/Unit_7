@@ -4,25 +4,86 @@ import java.util.ArrayList;
  *                                                      SelfAdjusting
  * @author Aron D. Bishop
  * @since March 7, 2020
- * @version 1.0
+ * @version 2.0
  *
- * The Java class SelfAdjusting is an algorithm
+ * Description:
+ * The Java class SelfAdjusting includes one method and two constructors. The first constructor includes a ArrayList
+ * parameter. It passes the users ArrayList to instance variable, which stores an ArrayList. The second constructor
+ * includes no parameters and creates a "default ArrayList" and passes it to private instance variable.
  *
+ *The objective:
+ *The point of this class is search an ArrayList with pre-defined search numbers(in an ArrayList). If the number
+ * the user is search for is found It should me moved to front of list to increase the speed of querying the list
+ * and find the desired number. If the number the user is searching for is already at index 0 do nothing and If the
+ * number is not found do nothing.
  */
+
 
 public class SelfAdjusting {
 
-    private ArrayList<Integer> queryArrayList;
+    private ArrayList<Integer> queryArrayList; /*private instance of ArrayList, which is the ArrayList we are
+     sorting for.*/
 
-    public SelfAdjusting(ArrayList<Integer>queryArrayList) {
+    public SelfAdjusting(ArrayList<Integer>queryArrayList) { /*SelfAdjusting constructor with parameter.
+    It passes the user selected ArrayList to private ArrayList instance.*/
+
+
         this.queryArrayList= queryArrayList;
     }
+    public SelfAdjusting() {
+        ArrayList<Integer>defaultArrayList= new ArrayList<>(); //default ArrayList if no parameter is passed
+        defaultArrayList.add(2);
+        defaultArrayList.add(4);
+        defaultArrayList.add(10);
+        defaultArrayList.add(15);
+        defaultArrayList.add(0);
+        this.queryArrayList=defaultArrayList;
+    }
 
+    /**
+     *
+     * @return returns the ArrayList saved in the private instance of SelfAdjusting Class
+     */
     public ArrayList<Integer> getQueryArrayList() {
         return queryArrayList;
     }
+
+    /**                                             Method-AdjustList
+     *
+     *Description:
+     * AdjustList is a method that requires one parameter. The parameter is an ArrayList containing
+     * the numbers you want to search for. The method includes a default list which will be so searched at and
+     * will be modified by the algorithm described below, to more quickly find the number.
+     *
+     *
+     * Algorithm:
+     * Essentially the Algorithm is you search for your designated number, if its in the list and its not the first
+     * index move it the front of the ArrayList.
+     *
+     * 1)Create for loop to test each individual number in the ArrayList the user wants to search for.
+     *
+     * 2)Creates another for loop to test the pre-defined ArrayList.
+     *
+     * 3) traverse the for loop for pre-define ArrayList until it finds the pre-defined number in the ArrayList and
+     * the number in the searchArrayList.
+     *
+     * 4) then I ask if they both have the same number ask what is the index of number in the pre-define ArrayList.
+     * If the index=0 break. otherwise move the value to end first and remove the value from its original location
+     * with the saved index.
+     *
+     * 5)Return the modified list.
+     *
+     * @param searchArrayList This variable contains the ArrayList that has the numbers we will use to search the
+     * pre-defined ArrayList.
+     *
+     * @return returns the pre-define ArrayList in the adjustList method, with the modifications caused by
+     * the algorithm.
+     *
+
+     */
     public static ArrayList<Integer> adjustList(ArrayList<Integer> searchArrayList) {
 
+        //Creates the ArrayList we are searching at and adds the designated numbers to it
         ArrayList<Integer> arrayListToBeSearched_Modified= new ArrayList<>();
         arrayListToBeSearched_Modified.add(2);
         arrayListToBeSearched_Modified.add(4);
@@ -34,32 +95,38 @@ public class SelfAdjusting {
         arrayListToBeSearched_Modified.add(16);
         arrayListToBeSearched_Modified.add(18);
         arrayListToBeSearched_Modified.add(20);
-        System.out.println(arrayListToBeSearched_Modified);
+
+        //Provides The original ArrayList and String text that will go with modified arrayList
+        System.out.println("Original ArrayList/Pre-defined ArrayList :\n" + arrayListToBeSearched_Modified + "\n"
+        + "\nModified ArrayList:");
 
         for(int i= 0; i<searchArrayList.size();i++) {
-            int currentNum= searchArrayList.get(i);
+            int currentNum= searchArrayList.get(i); //actual value of the number we are searching for.
             if(currentNum==0) {
-                break;
+                break; //ends the loop immediately if the stop number "0" is found.
             }
-            int indexOfCurrentNum= i;
+
             for(int i2=0; i2<arrayListToBeSearched_Modified.size();i2++) {
-                int indexOfSearchNum=i2;
-                int testingNum=arrayListToBeSearched_Modified.get(i2);
+                int indexOfSearchNum=i2; //the index of number we are searching for.
+                int testingNum=arrayListToBeSearched_Modified.get(i2); //the value of number we are searching for.
 
                 if(currentNum==testingNum) {
-                    if(indexOfCurrentNum==indexOfSearchNum) {
-                        break;
+                    if(indexOfSearchNum==0) {
+                        break; // breaks the loop if index of number==0 and the numbers value is ==.
                     }
-                    else if(indexOfCurrentNum!=indexOfSearchNum) {
-                        arrayListToBeSearched_Modified.add(0,testingNum);
-                        arrayListToBeSearched_Modified.remove(indexOfSearchNum+1);
-                        break;
+                    else if(indexOfSearchNum!=0) {
+                        arrayListToBeSearched_Modified.add(0,testingNum); /* takes the number the user
+                        is searching  "If Found" to  first index. to find the value quicker.*/
+
+                        arrayListToBeSearched_Modified.remove(indexOfSearchNum+1); /*I add + since the array
+                        was modified.*/
+                        break; //breaks out the for loop before any errors can be caused.
                     }
                 }
 
             }
         }
-        return arrayListToBeSearched_Modified;
+        return arrayListToBeSearched_Modified; //Returns the modified numbers
     }
 
 

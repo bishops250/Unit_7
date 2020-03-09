@@ -4,7 +4,7 @@ import java.util.ArrayList;
  *                                                      SelfAdjusting
  * @author Aron D. Bishop
  * @since March 7, 2020
- * @version 2.0
+ * @version 3.0
  *
  * Description:
  * The Java class SelfAdjusting includes one method and two constructors. The first constructor includes a ArrayList
@@ -26,7 +26,6 @@ public class SelfAdjusting {
 
     public SelfAdjusting(ArrayList<Integer>queryArrayList) { /*SelfAdjusting constructor with parameter.
     It passes the user selected ArrayList to private ArrayList instance.*/
-
 
         this.queryArrayList= queryArrayList;
     }
@@ -71,17 +70,12 @@ public class SelfAdjusting {
      * If the index=0 break. otherwise move the value to end first and remove the value from its original location
      * with the saved index.
      *
-     * 5)Return the modified list.
      *
-     * @param searchArrayList This variable contains the ArrayList that has the numbers we will use to search the
-     * pre-defined ArrayList.
-     *
-     * @return returns the pre-define ArrayList in the adjustList method, with the modifications caused by
-     * the algorithm.
      *
 
      */
-    public static ArrayList<Integer> adjustList(ArrayList<Integer> searchArrayList) {
+
+    public void adjustList() {
 
         //Creates the ArrayList we are searching at and adds the designated numbers to it
         ArrayList<Integer> arrayListToBeSearched_Modified= new ArrayList<>();
@@ -100,8 +94,8 @@ public class SelfAdjusting {
         System.out.println("Original ArrayList/Pre-defined ArrayList :\n" + arrayListToBeSearched_Modified + "\n"
         + "\nModified ArrayList:");
 
-        for(int i= 0; i<searchArrayList.size();i++) {
-            int currentNum= searchArrayList.get(i); //actual value of the number we are searching for.
+        for(int i= 0; i<queryArrayList.size();i++) {
+            int currentNum= queryArrayList.get(i); //actual value of the number we are searching for.
             if(currentNum==0) {
                 break; //ends the loop immediately if the stop number "0" is found.
             }
@@ -126,7 +120,7 @@ public class SelfAdjusting {
 
             }
         }
-        return arrayListToBeSearched_Modified; //Returns the modified numbers
+       System.out.println(arrayListToBeSearched_Modified);//Prints the Modified ArrayList
     }
 
 

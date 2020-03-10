@@ -74,7 +74,6 @@ public class SelfAdjusting {
      *
 
      */
-
     public void adjustList() {
 
         //Creates the ArrayList we are searching at and adds the designated numbers to it

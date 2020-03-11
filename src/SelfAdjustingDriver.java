@@ -21,8 +21,8 @@ public class SelfAdjustingDriver {
         test2ArrayList.add(0);
 
         SelfAdjusting test1= new SelfAdjusting(test1ArrayList);
-        System.out.println(SelfAdjusting.adjustList(test1ArrayList));
-        test1.getQueryArrayList();
+        test1.adjustList();
+
 
 
     }
